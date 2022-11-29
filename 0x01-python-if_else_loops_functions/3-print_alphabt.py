@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-for i in range(97, 123):
-    asciiWithoutQandE = chr(i)
-    numberToAlpha = "" + asciiWithoutQandE
-if i == 101 or i == 113:
-    continue
-    print("{}".format(numberToAlpha), end='')
+for alpha in range(97, 123):
+    if alpha == 101 or alpha == 113:
+        continue
+    print("{}".format(chr(alpha)), end="")
