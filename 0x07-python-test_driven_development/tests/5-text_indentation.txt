@@ -1,0 +1,65 @@
+"""
+TEST FILE FOR INDENTATION
+"""
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("poop")
+poop
+
+>>> text_indentation("po.op")
+po.
+<BLANKLINE>
+op
+
+>>> text_indentation("po: op")
+po:
+<BLANKLINE>
+op
+
+>>> text_indentation("po.     op")
+po.
+<BLANKLINE>
+op
+
+>>> text_indentation("") is None
+True
+
+>>> text_indentation("poop:      ?    ")
+poop:
+<BLANKLINE>
+?
+<BLANKLINE>
+
+
+>>> text_indentation("hello:      ?    ")
+hello:
+<BLANKLINE>
+?
+<BLANKLINE>
+
+
+>>> text_indentation("hi...")
+hi.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+
+>>> text_indentation("             test     ")
+test
+
+
+=========== ERRORS ===========
+
+>>> text_indentation(3)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+

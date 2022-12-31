@@ -1,0 +1,118 @@
+""" TEST MODULE FOR 101 LAZY MULTIPLY """
+
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+array([[ 7, 10],
+       [15, 22]])
+
+>>> lazy_matrix_mul([[1, 2], [3, 4], [5, 6]], [[1, 2, 3, 4], [2, 3, 4,5]])
+array([[ 5,  8, 11, 14],
+       [11, 18, 25, 32],
+       [17, 28, 39, 50]])
+
+
+
+======================
+ERRORS NVM these were suposed to be errors for the last problem!!
+======================
+
+""" multiplying a 1x2 and a 1x2 gives an error """
+""" more tests of this is the multiplication erros at the very bottom """
+>>> lazy_matrix_mul([[1, 1]], [[1, 1]])
+Traceback (most recent call last):
+...
+ValueError: shapes (1,2) and (1,2) not aligned: 2 (dim 1) != 1 (dim 0)
+
+
+""" when not a list checks """
+
+>>> lazy_matrix_mul("poop", [4])
+Traceback (most recent call last):
+...
+""" OK THIS ISNT LIKE 100 ERRORS. USE NUMPY ERRPORS TypeError: m_a must be a list """
+ValueError: Scalar operands are not allowed, use '*' instead
+
+>>> lazy_matrix_mul([[0]], "sponge")
+Traceback (most recent call last):
+...
+#TypeError: m_b must be a list
+ValueError: Scalar operands are not allowed, use '*' instead
+
+""" when not a list of list checks """
+
+>>> lazy_matrix_mul([0], [[0]])
+array([0])
+
+
+>>> lazy_matrix_mul([[0]], [0])
+array([0])
+
+
+""" empty list checks """
+
+>>> lazy_matrix_mul([[]], [[0]])
+Traceback (most recent call last):
+...
+ValueError: shapes (1,0) and (1,1) not aligned: 0 (dim 1) != 1 (dim 0)
+
+>>> lazy_matrix_mul([], [[0]])       
+Traceback (most recent call last):
+...
+#ValueError: m_a can't be empty
+ValueError: shapes (0,) and (1,1) not aligned: 0 (dim 0) != 1 (dim 0)
+
+>>> lazy_matrix_mul([[0]], [[]])       
+array([], shape=(1, 0), dtype=int64)
+
+
+>>> lazy_matrix_mul([[0]], [])       
+Traceback (most recent call last):
+...
+#ValueError: m_b can't be empty
+ValueError: shapes (1,1) and (0,) not aligned: 1 (dim 1) != 0 (dim 0)
+
+""" not int or float values check """
+
+>>> lazy_matrix_mul([["turtle", 2]], [[1], [2]])
+Traceback (most recent call last):
+...
+TypeError: invalid data type for einsum
+
+>>> lazy_matrix_mul([[1, 2]], [[1], ["i like"]])
+Traceback (most recent call last):
+...
+TypeError: invalid data type for einsum
+
+
+""" if rows are not the same size """
+
+>>> lazy_matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4]])           
+Traceback (most recent call last):
+...
+ValueError: setting an array element with a sequence.
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2, 3], [3, 4]])           
+Traceback (most recent call last):
+...
+ValueError: setting an array element with a sequence.
+
+
+""" if cant be multiplied. so like 2x3 and 3x2 is not allowed. 2x9 and 9x10 is allowed"""
+
+>>> lazy_matrix_mul([[1, 2], [3, 4], [5, 6]], [[1, 2, 3, 4], [2, 3, 4, 5], [1,2,3,4]])
+Traceback (most recent call last):
+...
+ValueError: shapes (3,2) and (3,4) not aligned: 2 (dim 1) != 3 (dim 0)
+
+
+>>> lazy_matrix_mul( )
+Traceback (most recent call last):
+...
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+
+>>> lazy_matrix_mul( , )
+Traceback (most recent call last):
+...
+SyntaxError: invalid syntax
