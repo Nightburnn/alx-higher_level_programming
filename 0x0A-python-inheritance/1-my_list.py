@@ -3,11 +3,12 @@
 
 
 class MyList(list):
+    """Implements sorted printing for the built-in list class."""
 
-    """Create a copy of the list and sort it in ascending order"""
 
-    def print_sorted(self):
+def print_sorted(self):
 
-        """Print the sorted list"""
+    """Print a list in sorted ascending order."""
 
-        print(sorted(self))
+
+print(sorted(self))
