@@ -10,7 +10,8 @@ In JavaScript, an object is a collection of properties. Properties can be added,
 
 * ES6 classes
 Object literals are the most common way to create objects in JavaScript. Here's an example:
-<code> const person = {
+```javascript
+const person = {
   firstName: 'John',
   lastName: 'Doe',
   age: 30,
@@ -21,8 +22,7 @@ Object literals are the most common way to create objects in JavaScript. Here's 
     zip: '12345'
   }
 };
- </code>
-
+```
 ### Scopes
 In JavaScript, scopes define where variables and functions are accessible. There are two main types of scopes in JavaScript:
 * Global scope
