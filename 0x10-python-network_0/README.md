@@ -1,5 +1,4 @@
-<img src="https://memezila.com/saveimage/I-need-a-network-specialist-with-some-python-experience-meme-1014">
-
+<img src="https://pbs.twimg.com/media/EmaGH8mXMAQ6HE5.jpg">
 ## Python Networking 0
 Python is a powerful language for networking and can be used to create a wide variety of network applications. Whether you're new to programming or an experienced developer, Python can be a great language to learn for networking.
 
